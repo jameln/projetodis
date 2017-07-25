@@ -97,4 +97,9 @@ class DefaultController extends Controller
     {
         return $this->render('odisVendorBundle:Default:dashboardVendor.html.twig');
     }
+	
+	public function addAdminAction()
+    {
+        return $this->render('odisVendorBundle:Default:addAdmin.html.twig');
+    }
 }

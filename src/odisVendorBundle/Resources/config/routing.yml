@@ -23,3 +23,7 @@ vendorEdit:
 vendorsaveEdit:
     path:     /vendorsaveEdit
     defaults: { _controller: odisVendorBundle:Default:vendorsaveEdit }
+
+addAdmin:
+    path:     /addAdmin
+    defaults: { _controller: odisVendorBundle:Default:addAdmin }

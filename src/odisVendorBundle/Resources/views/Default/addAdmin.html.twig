@@ -1,0 +1,160 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <div class="page-content-wrapper" style="margin-bottom: 25px">
+        <!-- BEGIN CONTENT BODY -->
+        <div class="container-fluid container-lf-space">
+            <!-- BEGIN PAGE BREADCRUMB -->
+            <ul class="page-breadcrumb breadcrumb">
+                <li>
+                    <a href="index.html">Home</a>
+                    <i class="fa fa-circle"></i>
+                </li>
+                <li>
+                    <span class="active">Add Administrator</span>
+                </li>
+            </ul>
+            <!-- END PAGE BREADCRUMB -->
+            <!-- BEGIN PAGE BASE CONTENT -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div >
+
+                        <div class="portlet-body form">
+                            <form class="form-horizontal" action="#" id="" method="POST">
+                                <div class="alert alert-danger display-none">
+                                    <button class="close" data-dismiss="alert"></button> You have some form errors. Please check below. </div>
+                                <div class="alert alert-success display-none">
+                                    <button class="close" data-dismiss="alert"></button> Your form validation is successful! </div>
+                                <div class="col-md-6">
+                                    <h3 class="form-section" style="color: #e7505a">Affiliation</h3>
+                                    <div class="form-group form-md-line-input">
+                                        <label class="col-md-4 control-label" for="admin_regionCountry">Region/Country
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="admin_regionCountry" placeholder="Enter Region" required>
+                                            <div class="form-control-focus"> </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group form-md-line-input">
+                                        <label class="col-md-4 control-label" for="admin_industry">Industry
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="admin_industry" placeholder="Enter Industry" required>
+                                            <div class="form-control-focus"> </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group form-md-line-input">
+                                        <label class="col-md-4 control-label" for="admin_area">Area/SubArea
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="admin_area" placeholder="Enter Area" required>
+                                            <div class="form-control-focus"> </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group form-md-line-input">
+                                        <label class="col-md-4 control-label" for="admin_branch">Branch/Minor Branch
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="admin_branch" placeholder="Enter Branch" required>
+                                            <div class="form-control-focus"> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3 class="form-section" style="color: #e7505a">Administrator</h3>
+                                    <div class="form-group form-md-line-input">
+                                        <label class="col-md-4 control-label" for="admin_name">Name
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="admin_name" placeholder="Enter Name" required>
+                                            <div class="form-control-focus"> </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group form-md-line-input">
+                                        <label class="col-md-4 control-label" for="admin_position">Position
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="admin_position" placeholder="Enter Position" required>
+                                            <div class="form-control-focus"> </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group form-md-line-input">
+                                        <label class="col-md-4 control-label" for="admin_email">Email
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-6">
+                                            <input type="email" class="form-control" id="admin_email" placeholder="Enter Email" required>
+                                            <div class="form-control-focus"> </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group form-md-line-input">
+                                        <label class="col-md-4 control-label" for="admin_telephone">Phone Number
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="admin_telephone" placeholder="Enter Phone Number" required>
+                                            <div class="form-control-focus"> </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group form-md-line-input">
+                                        <label class="col-md-4 control-label" for="admin_login">Login
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="admin_login" placeholder="Enter Login" required>
+                                            <div class="form-control-focus"> </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group form-md-line-input">
+                                        <label class="col-md-4 control-label" for="admin_password">Password
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-6">
+                                            <input type="password" class="form-control" id="admin_password" placeholder="Enter Password" required>
+                                            <div class="form-control-focus"> </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group form-md-line-input">
+                                        <label class="col-md-4 control-label">
+                                        </label>
+                                        <label class="col-md-6" >
+                                            <span class="input-group-btn btn-right">
+                                                <button class="btn green-haze" type="button">Generate Password</button>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div style="border-top: 0px !important">
+                                    <div class="row">
+                                        <div class="col-md-offset-3 col-md-9">
+                                            <button type="reset" class="btn btn-outline red button-next"> Reset
+                                                <i class="fa fa-angle-right"></i>
+                                            </button>
+                                            <button type="submit" class="btn green button-submit"> Submit
+                                                <i class="fa fa-check"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END PAGE BASE CONTENT -->
+        </div>
+        <!-- END CONTENT BODY -->
+    </div>
+
+{% endblock %}
+{%  block  specificJS %}
+
+{% endblock %}
