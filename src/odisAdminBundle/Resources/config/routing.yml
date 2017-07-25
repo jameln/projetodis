@@ -1,0 +1,15 @@
+odis_admin_homepage:
+    path:     /
+    defaults: { _controller: odisAdminBundle:Default:dashboardAdmin }
+
+adminRegister:
+    path:     /adminRegister
+    defaults: { _controller: odisAdminBundle:Default:formAdmin }
+
+adminDashboard:
+    path:     /adminDashboard
+    defaults: { _controller: odisAdminBundle:Default:dashboardAdmin }
+    
+addOutsourcingEmp:
+    path:     /addOutsourcingEmp
+    defaults: { _controller: odisAdminBundle:Default:addOutsourcingEmp }

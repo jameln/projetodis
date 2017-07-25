@@ -1,0 +1,7 @@
+odis_outsourcing_emp_homepage:
+    path:     /
+    defaults: { _controller: odisOutsourcingEmpBundle:Default:profilOutsourcingEmp }
+
+profileOutsourcingEmp:
+    path:     /MyProfile
+    defaults: { _controller: odisOutsourcingEmpBundle:Default:profilOutsourcingEmp }

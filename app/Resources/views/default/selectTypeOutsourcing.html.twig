@@ -1,0 +1,54 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+<!-- How it works -->
+<section id="how_it_works">
+    <div class="container">
+        <div class="row text-center" id= "heading">
+                <div class="col-md-6 col-md-offset-3 wow animated zoomInDown" id= "heading-text">
+                        <h3>How it works</h3>
+                        <p>Drive People into the futur model</p>
+                        <hr class= "full">
+                        <br/>
+                </div>
+        </div>
+        <div class="main_content">
+            <div class="services">
+                <div class="row">
+                    <div class="col-sm-4 service">
+                            <div class="service-icon text-center">
+                                    <a class=" btn red btn-outline" style="width: 250px; margin: 20px;" href="{{ url('vendorRegister') }}"><h4> Man-Day Outsourcing </h4></a>
+                            </div>
+                            <div class="about-service">
+                                    <p class="text-center">
+                                            You provide outsourced employee, on a daily basis and for a specific assignment.
+                                    </p>
+                            </div>
+                    </div>	<!-- col-sm-4 -->
+                    <div class="col-sm-4 service">
+                            <div class="service-icon text-center">
+                                    <button type="button" class=" btn red btn-outline" style="width: 250px; margin: 20px;" ><h4> Service Outsourcing </h4></button>
+                            </div>
+                            <div class="about-service">
+                                    <p class="text-center">
+                                            You provide outsourced service, for day to day operations and on a regular performance basis.
+                                    </p>
+                            </div>
+                    </div>	<!-- col-sm-4 -->
+                    <div class="col-sm-4 service">
+                            <div class="service-icon text-center">
+                                    <button type="button" class=" btn red btn-outline" style="width: 250px; margin: 20px;" ><h4> Project Outsourcing </h4></button>
+                            </div>
+                            <div class="about-service">
+                                    <p class="text-center">
+                                            You provide turnkey project (or a part of it)for a unique deliverable under a timely framed scope. 
+                                    </p>
+                            </div>
+                    </div>	<!-- col-sm-4 -->
+                </div>	<!-- row -->
+            </div>	<!-- services -->
+        </div>	<!-- main_content -->
+    </div>	<!-- container -->
+</section>	<!-- our_service -->
+
+{% endblock %}

@@ -1,0 +1,52 @@
+body, html{
+	background: #fff;
+	height: 100%;
+}
+.page-container, .page-content-wrapper, .rowHome{
+	height: 100%;
+}
+.page-header.navbar .top-menu .navbar-nav>li.dropdown .dropdown-toggle:hover {
+    background-color: transparent !important;
+}
+
+.page-header.navbar .top-menu .navbar-nav>li.dropdown .dropdown-toggle:hover .badge, .page-header.navbar .top-menu .navbar-nav>li.dropdown.open .dropdown-toggle .badge {
+    background-color: #ff0000 !important;
+}
+
+.page-header.navbar .top-menu .navbar-nav>li.dropdown.open .dropdown-toggle {
+    background-color: transparent !important;
+}
+
+.scroll-to-top>i {
+	color: red;
+}
+
+.badge-success {
+    background-color: #2e75b6 ;
+}
+.quick-nav .quick-nav-bg{
+	background: #2e75b6;
+}
+.page-container, .page-content-wrapper, .rowHome {
+    position: relative;
+	top:75px;
+}
+@media (max-width: 767px){
+	.page-header.navbar .page-top {
+	background: #f0f0f0;
+	}
+	.page-container, .page-content-wrapper, .rowHome {
+		top:0px;
+	}
+}
+@media (min-width: 768px){
+	.page-container, .page-content-wrapper, .rowHome {
+		top:0px;
+	}
+}
+@media (min-width: 992px){
+	.page-container, .page-content-wrapper, .rowHome {
+	top:75px;
+}
+}
+

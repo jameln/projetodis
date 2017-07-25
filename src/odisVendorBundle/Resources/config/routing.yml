@@ -1,0 +1,20 @@
+odis_vendor_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: odisVendorBundle:Default:index }
+    
+vendorRegister:
+    path:     /vendorRegister
+    defaults: { _controller: odisVendorBundle:Default:formVendor }
+
+vendorDashboard:
+    path:     /vendorDashboard
+    defaults: { _controller: odisVendorBundle:Default:dashboardVendor }
+
+vendorAdd:
+    path:     /vendorAdd
+    methods:  [POST]
+    defaults: { _controller: odisVendorBundle:Default:vendorAdd }
+
+vendorEdit:
+    path:     /vendorEdit
+    defaults: { _controller: odisVendorBundle:Default:vendorEdit }

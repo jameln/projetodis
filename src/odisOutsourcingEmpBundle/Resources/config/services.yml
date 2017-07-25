@@ -1,0 +1,4 @@
+services:
+#    odis_outsourcing_emp.example:
+#        class: odisOutsourcingEmpBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

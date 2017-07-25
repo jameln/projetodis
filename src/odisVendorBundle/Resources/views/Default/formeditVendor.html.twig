@@ -1,0 +1,320 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <div class="page-content-wrapper">
+        <!-- BEGIN CONTENT BODY -->
+        <div class="container-fluid container-lf-space">
+            <!-- BEGIN PAGE BREADCRUMB -->
+            <ul class="page-breadcrumb breadcrumb">
+                <li>
+                    <a href="index.html">Home</a>
+                    <i class="fa fa-circle"></i>
+                </li>
+                <li>
+                    <span class="active">Form Stuff</span>
+                </li>
+            </ul>
+            <!-- END PAGE BREADCRUMB -->
+            <!-- BEGIN PAGE BASE CONTENT -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="portlet light bordered" id="form_vendor">
+                        <div class="portlet-body form">
+                            <form class="form-horizontal" action="{{ url('vendorAdd') }}" id="submit_form" method="POST">
+                                <div class="form-wizard">
+                                    <div class="form-body">
+                                        <ul class="nav nav-pills nav-justified steps">
+                                            <li>
+                                                <a href="#tab1" data-toggle="tab" class="step">
+                                                    <span class="number"> 1 </span>
+                                                    <span class="desc">
+                                                        <i class="fa fa-check"></i> Legal Entity </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#tab2" data-toggle="tab" class="step">
+                                                    <span class="number"> 2 </span>
+                                                    <span class="desc">
+                                                        <i class="fa fa-check"></i> Compliance </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#tab3" data-toggle="tab" class="step active">
+                                                    <span class="number"> 3 </span>
+                                                    <span class="desc">
+                                                        <i class="fa fa-check"></i> Access </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#tab4" data-toggle="tab" class="step">
+                                                    <span class="number"> 4 </span>
+                                                    <span class="desc">
+                                                        <i class="fa fa-check"></i> Confirm </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div id="bar" class="progress progress-striped" role="progressbar">
+                                            <div class="progress-bar progress-bar"> </div>
+                                        </div>
+                                        <div class="tab-content">
+                                            <div class="alert alert-danger display-none">
+                                                <button class="close" data-dismiss="alert"></button> You have some form errors. Please check below. </div>
+                                            <div class="alert alert-success display-none">
+                                                <button class="close" data-dismiss="alert"></button> Your form validation is successful! </div>
+                                            <div class="tab-pane active" id="tab1">
+                                                <h3 class="block text-center">Legal Entity</h3>
+                                                <div class="col-md-6">
+                                                    <h3 class="form-section" style="color: #e7505a">Outsource Provider</h3>
+                                                    <div class="form-group form-md-line-input">
+                                                        <label class="col-md-4 control-label" for="vendor_legal_name">Legal Name
+                                                            <span class="required"> * </span>
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" name="vendor_legal_name" id="vendor_legal_name" placeholder="Enter legal name" required>
+                                                            <div class="form-control-focus"> </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group form-md-line-input">
+                                                        <label class="col-md-4 control-label" for="vendor_trade_name">Trade Name
+                                                            <span class="required"> * </span>
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" id="vendor_trade_name"  name="vendor_trade_name" placeholder="Enter trade name" required>
+                                                            <div class="form-control-focus"> </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group form-md-line-input">
+                                                        <label class="col-md-4 control-label" for="vendor_head_quarter">Head Quarter
+                                                            <span class="required"> * </span>
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" name="vendor_head_quarter" id="vendor_head_quarter" placeholder="Enter Head Quarter" required>
+                                                            <div class="form-control-focus"> </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group form-md-line-input">
+                                                        <label class="col-md-4 control-label" for="vendor_number_of_employee">Number of Employee
+                                                            <span class="required"> * </span>
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input type="number" class="form-control" name="vendor_number_of_employee" id="vendor_number_of_employee"  placeholder="Enter Number of Employee" required>
+                                                            <div class="form-control-focus"> </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group form-md-line-input">
+                                                        <label class="col-md-4 control-label" for="vendor_website">Website
+                                                            <span class="required"> * </span>
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" name="vendor_website" id="vendor_website"  placeholder="Enter Website" required>
+                                                            <div class="form-control-focus"> </div>
+                                                        </div>
+                                                    </div>
+                                                    <h3 class="form-section" style="color: #e7505a">Global Operations</h3>
+                                                    <div class="form-group form-md-line-input">
+                                                        <div id="map_vendor_register_content" class="display-none">
+                                                            <div class="btn-toolbar margin-bottom-10">
+                                                                <div class="btn-group pull-right">
+                                                                    <a href="" class="btn btn-circle grey-salsa btn-sm dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"> Select Region
+                                                                        <span class="fa fa-angle-down"> </span>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu pull-right">
+                                                                        <li>
+                                                                            <a href="javascript:;" id="map_vendor_register_world"> World </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="javascript:;" id="map_vendor_register_usa"> USA </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="javascript:;" id="map_vendor_register_europe"> Europe </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="javascript:;" id="map_vendor_register_russia"> Russia </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="javascript:;" id="map_vendor_register_germany"> Germany </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div id="vmap_world" class="vmaps display-none"> </div>
+                                                            <div id="vmap_usa" class="vmaps display-none"> </div>
+                                                            <div id="vmap_europe" class="vmaps display-none"> </div>
+                                                            <div id="vmap_russia" class="vmaps display-none"> </div>
+                                                            <div id="vmap_germany" class="vmaps display-none"> </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="add_administrator_form">
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h3 class="form-section" style="color: #e7505a">Chief Administrator</h3>
+                                                    <div class="form-group form-md-line-input">
+                                                        <label class="col-md-4 control-label" for="vendor_name_surname">Name & Surname
+                                                            <span class="required"> * </span>
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" name="vendor_name_surname" id="vendor_name_surname" placeholder="Enter Name & Surname" required>
+                                                            <div class="form-control-focus"> </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group form-md-line-input">
+                                                        <label class="col-md-4 control-label" for="vendor_position">Position
+                                                            <span class="required"> * </span>
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" name="vendor_position" id="vendor_position" placeholder="Enter Position" required>
+                                                            <div class="form-control-focus"> </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group form-md-line-input">
+                                                        <label class="col-md-4 control-label" for="vendor_email">Email
+                                                            <span class="required"> * </span>
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input type="mail" class="form-control" name="vendor_email"  id="vendor_email" placeholder="Enter Email" required>
+                                                            <div class="form-control-focus"> </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group form-md-line-input">
+                                                        <label class="col-md-4 control-label" for="vendor_telephone">Telepohone
+                                                            <span class="required"> * </span>
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" name="vendor_telephone"  id="vendor_telephone" placeholder="Enter Telephone Number" required>
+                                                            <div class="form-control-focus"> </div>
+                                                        </div>
+                                                    </div>
+                                                    <h3 class="form-section" style="color: #e7505a">Alternative Contact</h3>
+                                                    <div class="form-group form-md-line-input">
+                                                        <label class="col-md-4 control-label" for="vendor_alternative_contact_name_position">Name_Position
+                                                            <span class="required"> * </span>
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" name="vendor_alternative_contact_name_position" id="vendor_alternative_contact_name_position"  placeholder="Enter Name_Position" required>
+                                                            <div class="form-control-focus"> </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group form-md-line-input">
+                                                        <label class="col-md-4 control-label" for="vendor_alternative_contact_email">Email
+                                                            <span class="required"> * </span>
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input type="mail" class="form-control" name="vendor_alternative_contact_email"  id="vendor_alternative_contact_email"  placeholder="Enter Email" required>
+                                                            <div class="form-control-focus"> </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group form-md-line-input">
+                                                        <label class="col-md-4 control-label" for="vendor_alternative_contact_telephone">Telephone
+                                                            <span class="required"> * </span>
+                                                        </label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" name="vendor_alternative_contact_telephone" id="vendor_alternative_contact_telephone" placeholder="Enter Telephone" required>
+                                                            <div class="form-control-focus"> </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="tab-pane" id="tab2">
+                                                <h3 class="block text-center">Compliance</h3>
+                                                <div class="form-group form-md-line-input">
+                                                    <label class="col-md-4 control-label" for="vendor_regulatory_compliance">Regulatory Compliance
+                                                        <span class="required"> * </span>
+                                                    </label>
+                                                    <div class="col-md-6">
+                                                        <select class="form-control" name="vendor_regulatory_compliance" id="vendor_regulatory_compliance">
+                                                            <option value="US Laws">US Laws</option>
+                                                            <option value="Eu Laws">Eu Laws</option>
+                                                            <option value="Hong Kong Laws">Hong Kong Laws</option>
+                                                        </select>
+                                                        <div class="form-control-focus"> </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group form-md-line-input">
+                                                    <label class="col-md-4 control-label" for="vendor_prc_regulations">PRC Regulations
+                                                        <span class="required"> * </span>
+                                                    </label>
+                                                    <div class="col-md-6">
+                                                        <select class="form-control" name="vendor_prc_regulations" id="vendor_prc_regulations">
+                                                            <option value="_prc_regulations 1">_prc_regulations 1</option>
+                                                            <option value="_prc_regulations 2">_prc_regulations 2</option>
+                                                            <option value="_prc_regulations 3">_prc_regulations 3</option>
+                                                        </select>
+                                                        <div class="form-control-focus"> </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="tab3">
+                                                <h3 class="block text-center">Access</h3>
+                                                <div class="form-group form-md-line-input">
+                                                    <label class="col-md-4 control-label" for="vendor_login">Login
+                                                        <span class="required"> * </span>
+                                                    </label>
+                                                    <div class="col-md-6">
+                                                        <input type="text" class="form-control" name="vendor_Login" id="vendor_Login"  placeholder="Enter Login" required>
+                                                        <div class="form-control-focus"> </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group form-md-line-input">
+                                                    <label class="col-md-4 control-label" for="vendor_access_key">Access Key
+                                                        <span class="required"> * </span>
+                                                    </label>
+                                                    <div class="col-md-6">
+                                                        <input type="text" class="form-control" id="vendor_access_key"  name="vendor_access_key" placeholder="Enter Access Key" required>
+                                                        <div class="form-control-focus"> </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="tab4">
+                                                <h3 class="block text-center">Confirm</h3>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Legal Name:</label>
+                                                    <div class="col-md-4">
+                                                        <p class="form-control-static" data-display="vendor_legal_name"> </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions" style="border-top: 0px !important">
+                                        <div class="row">
+                                            <div class="col-md-offset-3 col-md-9">
+                                                <a href="javascript:;" class="btn default button-previous">
+                                                    <i class="fa fa-angle-left"></i> Back </a>
+                                                <a href="javascript:;" class="btn btn-outline green button-next"> Continue
+                                                    <i class="fa fa-angle-right"></i>
+                                                </a>
+                                                <button type="submit" class="btn green button-submit">submit <i class="fa fa-check"></i></button>
+                                                <!-- <a href="javascript:;" class="btn green button-submit"> Submit
+                                                    <i class="fa fa-check"></i>
+                                                </a>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END PAGE BASE CONTENT -->
+        </div>
+        <!-- END CONTENT BODY -->
+    </div>
+
+{% endblock %}
+{%  block  specificJS %}
+    <script>
+        jQuery(document).ready(function () {
+            FormWizard.init();
+            initMapVendorRegiter();
+        });
+        function deleteAdmin(id) {
+            //$('#administrator_'+id.toUpperCase()).remove();
+            $('.vmaps').vectorMap('deselect', id);
+        }
+    </script>
+{% endblock %}

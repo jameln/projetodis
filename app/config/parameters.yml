@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: todolist
+    database_user: root
+    database_password: null
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: admin@odis.pro
+    mailer_password: admin
+    secret: 4be38179afbdb46a5e8c6ce281f7cf270689d467

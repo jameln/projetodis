@@ -1,0 +1,4 @@
+services:
+#    odis_vendor.example:
+#        class: odisVendorBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

@@ -1,0 +1,31 @@
+index:
+    path:     /
+    defaults: { _controller: AppBundle:Default:index }
+    
+odis_outsourcing_emp:
+    resource: "@odisOutsourcingEmpBundle/Resources/config/routing.yml"
+    prefix:   /
+
+odis_admin:
+    resource: "@odisAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+
+
+odis_vendor:
+    resource: "@odisVendorBundle/Resources/config/routing.yml"
+
+# app/config/routing.yml
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+selectTypeOutsourcing:
+    path:     /selectTypeOutsourcing
+    defaults: { _controller: AppBundle:Default:selecttypeoutsourcing }
+
+
+  
