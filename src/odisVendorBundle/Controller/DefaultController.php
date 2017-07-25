@@ -57,16 +57,42 @@ class DefaultController extends Controller
      */
     public function vendorEditAction($id, Request $request)
     {
-
         $em = $this->getDoctrine()->getEntityManager();
         $vendor = $em->getRepository('odisVendorBundle:vendor')->find($id);
+        return $this->render('odisVendorBundle:Default:formeditVendor.html.twig', array(
+            'vendor' => $vendor
+        ));
+    }
 
-        var_dump($vendor);
-        die();
+    /**
+     * @Route("/vendorsaveEdit", name="edit Vendor")
+     */
+    public function vendorsaveEditAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+        $vendor = $em->getRepository('odisVendorBundle:vendor')->find($request->request->get('vendor_id'));
 
+        $vendor->setLegalName($request->request->get('vendor_legal_name'));
+        $vendor->setTradeName($request->request->get('vendor_trade_name'));
+        $vendor->setHeadQuarter($request->request->get('vendor_head_quarter'));
+        $vendor->setNumEmployee($request->request->get('vendor_number_of_employee'));
+        $vendor->setWebsite($request->request->get('vendor_website'));
+        $vendor->setAltMail($request->request->get('vendor_alternative_contact_email'));
+        $vendor->setAltName($request->request->get('vendor_alternative_contact_name_position'));
+        $vendor->setAltTelephone($request->request->get('vendor_alternative_contact_telephone'));
+        $vendor->setCaMail($request->request->get('vendor_email'));
+        $vendor->setCaName($request->request->get('vendor_name_surname'));
+        $vendor->setCaPosition($request->request->get('vendor_position'));
+        $vendor->setCaTelephone($request->request->get('vendor_telephone'));
+        $vendor->setLogin($request->request->get('vendor_Login'));
+        $vendor->setPassword($request->request->get('vendor_access_key'));
+        $vendor->setReguComplience($request->request->get('vendor_regulatory_compliance'));
+        $vendor->setRpcRegulation($request->request->get('vendor_prc_regulations'));
+
+        $em->flush();
         return $this->render('odisVendorBundle:Default:dashboardVendor.html.twig');
     }
-    
+
     public function dashboardVendorAction()
     {
         return $this->render('odisVendorBundle:Default:dashboardVendor.html.twig');

@@ -20,7 +20,8 @@
                 <div class="col-md-12">
                     <div class="portlet light bordered" id="form_vendor">
                         <div class="portlet-body form">
-                            <form class="form-horizontal" action="{{ url('vendorAdd') }}" id="submit_form" method="POST">
+                            <form class="form-horizontal" action="{{ url('vendorsaveEdit') }}" id="submit_form" method="POST">
+                                <input type="hidden"  name="vendor_id" value="{{vendor.id}}">
                                 <div class="form-wizard">
                                     <div class="form-body">
                                         <ul class="nav nav-pills nav-justified steps">
@@ -70,7 +71,7 @@
                                                             <span class="required"> * </span>
                                                         </label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control" name="vendor_legal_name" id="vendor_legal_name" placeholder="Enter legal name" required>
+                                                            <input type="text" class="form-control" name="vendor_legal_name" id="vendor_legal_name" value="{{vendor.legalName}}" required>
                                                             <div class="form-control-focus"> </div>
                                                         </div>
                                                     </div>
@@ -79,7 +80,7 @@
                                                             <span class="required"> * </span>
                                                         </label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control" id="vendor_trade_name"  name="vendor_trade_name" placeholder="Enter trade name" required>
+                                                            <input type="text" class="form-control" id="vendor_trade_name"  name="vendor_trade_name" value="{{vendor.tradeName}}" required>
                                                             <div class="form-control-focus"> </div>
                                                         </div>
                                                     </div>
@@ -88,7 +89,7 @@
                                                             <span class="required"> * </span>
                                                         </label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control" name="vendor_head_quarter" id="vendor_head_quarter" placeholder="Enter Head Quarter" required>
+                                                            <input type="text" class="form-control" name="vendor_head_quarter" id="vendor_head_quarter" value="{{vendor.headQuarter}}" required>
                                                             <div class="form-control-focus"> </div>
                                                         </div>
                                                     </div>
@@ -97,7 +98,7 @@
                                                             <span class="required"> * </span>
                                                         </label>
                                                         <div class="col-md-6">
-                                                            <input type="number" class="form-control" name="vendor_number_of_employee" id="vendor_number_of_employee"  placeholder="Enter Number of Employee" required>
+                                                            <input type="number" class="form-control" name="vendor_number_of_employee" id="vendor_number_of_employee"  value="{{vendor.numEmployee}}" required>
                                                             <div class="form-control-focus"> </div>
                                                         </div>
                                                     </div>
@@ -106,48 +107,10 @@
                                                             <span class="required"> * </span>
                                                         </label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control" name="vendor_website" id="vendor_website"  placeholder="Enter Website" required>
+                                                            <input type="text" class="form-control" name="vendor_website" id="vendor_website"  value="{{vendor.website}}" required>
                                                             <div class="form-control-focus"> </div>
                                                         </div>
                                                     </div>
-                                                    <h3 class="form-section" style="color: #e7505a">Global Operations</h3>
-                                                    <div class="form-group form-md-line-input">
-                                                        <div id="map_vendor_register_content" class="display-none">
-                                                            <div class="btn-toolbar margin-bottom-10">
-                                                                <div class="btn-group pull-right">
-                                                                    <a href="" class="btn btn-circle grey-salsa btn-sm dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"> Select Region
-                                                                        <span class="fa fa-angle-down"> </span>
-                                                                    </a>
-                                                                    <ul class="dropdown-menu pull-right">
-                                                                        <li>
-                                                                            <a href="javascript:;" id="map_vendor_register_world"> World </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="javascript:;" id="map_vendor_register_usa"> USA </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="javascript:;" id="map_vendor_register_europe"> Europe </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="javascript:;" id="map_vendor_register_russia"> Russia </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="javascript:;" id="map_vendor_register_germany"> Germany </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                            <div id="vmap_world" class="vmaps display-none"> </div>
-                                                            <div id="vmap_usa" class="vmaps display-none"> </div>
-                                                            <div id="vmap_europe" class="vmaps display-none"> </div>
-                                                            <div id="vmap_russia" class="vmaps display-none"> </div>
-                                                            <div id="vmap_germany" class="vmaps display-none"> </div>
-                                                        </div>
-                                                    </div>
-                                                    <div id="add_administrator_form">
-
-                                                    </div>
-
                                                 </div>
                                                 <div class="col-md-6">
                                                     <h3 class="form-section" style="color: #e7505a">Chief Administrator</h3>
@@ -156,7 +119,7 @@
                                                             <span class="required"> * </span>
                                                         </label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control" name="vendor_name_surname" id="vendor_name_surname" placeholder="Enter Name & Surname" required>
+                                                            <input type="text" class="form-control" name="vendor_name_surname" id="vendor_name_surname" value="{{vendor.caName}}" required>
                                                             <div class="form-control-focus"> </div>
                                                         </div>
                                                     </div>
@@ -165,7 +128,7 @@
                                                             <span class="required"> * </span>
                                                         </label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control" name="vendor_position" id="vendor_position" placeholder="Enter Position" required>
+                                                            <input type="text" class="form-control" name="vendor_position" id="vendor_position" value="{{vendor.caPosition}}" required>
                                                             <div class="form-control-focus"> </div>
                                                         </div>
                                                     </div>
@@ -174,7 +137,7 @@
                                                             <span class="required"> * </span>
                                                         </label>
                                                         <div class="col-md-6">
-                                                            <input type="mail" class="form-control" name="vendor_email"  id="vendor_email" placeholder="Enter Email" required>
+                                                            <input type="mail" class="form-control" name="vendor_email"  id="vendor_email" value="{{vendor.caMail}}" required>
                                                             <div class="form-control-focus"> </div>
                                                         </div>
                                                     </div>
@@ -183,7 +146,7 @@
                                                             <span class="required"> * </span>
                                                         </label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control" name="vendor_telephone"  id="vendor_telephone" placeholder="Enter Telephone Number" required>
+                                                            <input type="text" class="form-control" name="vendor_telephone"  id="vendor_telephone" value="{{vendor.caTelephone}}" required>
                                                             <div class="form-control-focus"> </div>
                                                         </div>
                                                     </div>
@@ -193,7 +156,7 @@
                                                             <span class="required"> * </span>
                                                         </label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control" name="vendor_alternative_contact_name_position" id="vendor_alternative_contact_name_position"  placeholder="Enter Name_Position" required>
+                                                            <input type="text" class="form-control" name="vendor_alternative_contact_name_position" id="vendor_alternative_contact_name_position"  value="{{vendor.altName}}" required>
                                                             <div class="form-control-focus"> </div>
                                                         </div>
                                                     </div>
@@ -202,7 +165,7 @@
                                                             <span class="required"> * </span>
                                                         </label>
                                                         <div class="col-md-6">
-                                                            <input type="mail" class="form-control" name="vendor_alternative_contact_email"  id="vendor_alternative_contact_email"  placeholder="Enter Email" required>
+                                                            <input type="mail" class="form-control" name="vendor_alternative_contact_email"  id="vendor_alternative_contact_email" value="{{vendor.altMail}}" required>
                                                             <div class="form-control-focus"> </div>
                                                         </div>
                                                     </div>
@@ -211,7 +174,7 @@
                                                             <span class="required"> * </span>
                                                         </label>
                                                         <div class="col-md-6">
-                                                            <input type="text" class="form-control" name="vendor_alternative_contact_telephone" id="vendor_alternative_contact_telephone" placeholder="Enter Telephone" required>
+                                                            <input type="text" class="form-control" name="vendor_alternative_contact_telephone" id="vendor_alternative_contact_telephone" value="{{vendor.altTelephone}}" required>
                                                             <div class="form-control-focus"> </div>
                                                         </div>
                                                     </div>
@@ -225,7 +188,7 @@
                                                         <span class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-6">
-                                                        <select class="form-control" name="vendor_regulatory_compliance" id="vendor_regulatory_compliance">
+                                                        <select class="form-control" name="vendor_regulatory_compliance" id="vendor_regulatory_compliance" value="{{vendor.reguComplience}}" >
                                                             <option value="US Laws">US Laws</option>
                                                             <option value="Eu Laws">Eu Laws</option>
                                                             <option value="Hong Kong Laws">Hong Kong Laws</option>
@@ -238,7 +201,7 @@
                                                         <span class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-6">
-                                                        <select class="form-control" name="vendor_prc_regulations" id="vendor_prc_regulations">
+                                                        <select class="form-control" name="vendor_prc_regulations" id="vendor_prc_regulations"  value="{{vendor.rpcRegulation}}" >
                                                             <option value="_prc_regulations 1">_prc_regulations 1</option>
                                                             <option value="_prc_regulations 2">_prc_regulations 2</option>
                                                             <option value="_prc_regulations 3">_prc_regulations 3</option>
@@ -254,7 +217,7 @@
                                                         <span class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-6">
-                                                        <input type="text" class="form-control" name="vendor_Login" id="vendor_Login"  placeholder="Enter Login" required>
+                                                        <input type="text" class="form-control" name="vendor_Login" id="vendor_Login" value="{{vendor.login}}" required>
                                                         <div class="form-control-focus"> </div>
                                                     </div>
                                                 </div>
@@ -263,7 +226,7 @@
                                                         <span class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-6">
-                                                        <input type="text" class="form-control" id="vendor_access_key"  name="vendor_access_key" placeholder="Enter Access Key" required>
+                                                        <input type="text" class="form-control" id="vendor_access_key"  name="vendor_access_key" value="{{vendor.password}}" required>
                                                         <div class="form-control-focus"> </div>
                                                     </div>
                                                 </div>

@@ -16,5 +16,10 @@ vendorAdd:
     defaults: { _controller: odisVendorBundle:Default:vendorAdd }
 
 vendorEdit:
-    path:     /vendorEdit
+    path:     /vendorEdit/{id}
+    methods:  [GET]
     defaults: { _controller: odisVendorBundle:Default:vendorEdit }
+
+vendorsaveEdit:
+    path:     /vendorsaveEdit
+    defaults: { _controller: odisVendorBundle:Default:vendorsaveEdit }
