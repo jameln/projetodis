@@ -9,6 +9,10 @@ vendorRegister:
 vendorDashboard:
     path:     /vendorDashboard
     defaults: { _controller: odisVendorBundle:Default:dashboardVendor }
+    
+vendorAnalytics:
+    path:     /vendorAnalytics
+    defaults: { _controller: odisVendorBundle:Default:analyticsVendor }
 
 vendorAdd:
     path:     /vendorAdd
